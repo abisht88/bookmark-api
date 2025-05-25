@@ -10,9 +10,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/api/bookmarks")
 @RequiredArgsConstructor
 public class BookmarkController {
+
     private final BookmarkService bookmarkService;
 
     @GetMapping
