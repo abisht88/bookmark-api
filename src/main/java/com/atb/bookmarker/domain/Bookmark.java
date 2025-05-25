@@ -1,16 +1,20 @@
 package com.atb.bookmarker.domain;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 import java.time.Instant;
 
 @Entity
 @Table(name = "bookmarks")
-@Data
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Bookmark {
 
     @Id
+    @SequenceGenerator(name = "bm_id_seq_gen", sequenceName = "bm_id_seq")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "bm_id_seq_gen")
     private Long id;
 
