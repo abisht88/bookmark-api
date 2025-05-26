@@ -30,7 +30,7 @@ public class BookmarkService {
     @Transactional(readOnly = true)
     public BookmarksDTO searchBookmarks(Integer page, String query) {
         int pageNo = page < 1 ? 0 : page - 1;
-        Pageable pageable = PageRequest.of(pageNo, 10, Sort.Direction.DESC, "id");
+        Pageable pageable = PageRequest.of(pageNo, 10, Sort.Direction.ASC, "id");
         Page<BookmarkDTO> bookmarkDTOPage = bookmarkRepository.findByTitleContainsIgnoreCase(query, pageable);
         return new BookmarksDTO(bookmarkDTOPage);
     }
