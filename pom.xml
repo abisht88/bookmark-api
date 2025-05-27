@@ -175,7 +175,7 @@
 					</to>
 					<container>
 						<ports>
-							<port>8081</port>
+							<port>8080</port>
 						</ports>
 					</container>
 				</configuration>
